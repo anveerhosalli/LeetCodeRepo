@@ -1,7 +1,6 @@
 package com.demo.feb;
 
-import java.lang.reflect.Array;
-import java.util.Arrays;
+
 
 public class ArrayIsSorted {
     public static void main(String[] args) {
