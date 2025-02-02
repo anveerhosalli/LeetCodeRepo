@@ -3,7 +3,7 @@ package com.demo.feb;
 public class StrictlySubarray {
     public static void main(String[] args) {
 
-        int[] nums = {1,1,5};
+        int[] nums = {1,3,4};
         System.out.println(new StrictlySubarray().longestMonotonicSubarray(nums));
     }
     public int longestMonotonicSubarray(int[] nums) {
@@ -16,33 +16,23 @@ public class StrictlySubarray {
             if(nums[i]<nums[i+1]){
                 gCount++;
             }
+            if(nums[i] > nums[i+1]){
+                lCount++;
+            }
             else{
                 if(ggCount <= gCount){
                     ggCount = gCount;
                 }
                 gCount = 1;
-
-            }
-        }
-        ggCount=Math.max(ggCount,gCount);
-
-        for (int i=0; i<nums.length-1; i++){
-
-            if(nums[i] > nums[i+1]){
-                lCount++;
-            }
-            else{
-
                 if(llCount <= lCount){
                     llCount = lCount;
                 }
 
                 lCount = 1;
 
-
             }
-
         }
+        ggCount=Math.max(ggCount,gCount);
         llCount=Math.max(llCount,lCount);
 
 
